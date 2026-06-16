@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saved — Project Name</title>
+
+  <title>Moodseum — My Board</title>
+
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" defer src="js/saved.js"></script>
+
 </head>
+
+
 <body>
 
+  <!------------- header --------------->
   <header>
     <nav>
-      <span class="nav__logo">Project Name</span>
+      <span class="nav__logo">Moodseum</span>
       <div class="nav__links">
-        <a href="index.html">Search</a>
-        <a href="saved.html">Saved</a>
+        <a href="index.html">Gallery</a>
+        <a href="saved.html">My Board</a>
+        <a href="login.html">Profile</a>
       </div>
       <div class="nav__actions">
         <span id="nav-user"></span>
@@ -22,20 +31,29 @@
     </nav>
   </header>
 
+
+  <!------------ main ------------>
   <main>
 
-    <section>
-      <h2>Saved Items</h2>
-      <p id="saved-empty" hidden>Nothing saved yet.</p>
+    <!------- saved artworks ------->
+    <section class="saved-section">
+      <h1>My Mood Museum</h1>
+      <p>Your personally saved artworks, all in one place.</p>
+
+      <!-- if empty + link to the main page-->
+      <p id="saved-empty" hidden>No saved artworks yet — <a href="index.html">go explore!</a></p>
+
+
       <div id="saved-grid"></div>
     </section>
 
   </main>
 
+
+  <!--------- footer ---------->
   <footer>
-    <!-- footer content -->
+    <p>Moodseum by Lizi Sitchinava © 2026</p>
   </footer>
 
-  <script type="module" src="js/saved.js"></script>
 </body>
 </html>
