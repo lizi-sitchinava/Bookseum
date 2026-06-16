@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login — Project Name</title>
+
+  <title>Moodseum — Profile</title>
+
   <link rel="stylesheet" href="css/style.css">
+  <script type="module" defer src="js/login.js"></script>
+
 </head>
+
+
 <body>
 
+  <!------------- header --------------->
+  <header>
+    <nav>
+      <span class="nav__logo">Moodseum</span>
+      <div class="nav__links">
+        <a href="index.html">Gallery</a>
+        <a href="saved.html">My Board</a>
+        <a href="login.html">Profile</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!------------ main ------------>
   <main>
 
-    <form id="login-form">
-      <!-- input type="text" with validation attributes -->
-      <label for="name-input">Your name</label>
-      <input id="name-input" type="text" name="name" required minlength="2" autocomplete="name">
+    <!------- profile form ------->
+    <section class="login-section">
+      <h1>Set up your Moodseum profile</h1>
+      <p>Tell us a little about yourself to get started.</p>
 
-      <p id="login-error" hidden></p>
+      <form id="login-form">
 
-      <button type="submit">Start →</button>
-    </form>
+        <!------- name ------->
+        <label for="name-input">Your name</label>
+        <input
+          id="name-input"
+          type="text"
+          name="name"
+          required
+          minlength="2"
+          autocomplete="name"
+          placeholder="e.g. Galadriel"
+        />
+
+        <p id="login-error" hidden></p>
+
+        <button type="submit">Start exploring →</button>
+      </form>
+    </section>
 
   </main>
 
-  <script type="module" src="js/login.js"></script>
+
+  <!--------- footer ---------->
+  <footer>
+    <p>Moodseum by Lizi Sitchinava © 2026</p>
+  </footer>
+
 </body>
 </html>
