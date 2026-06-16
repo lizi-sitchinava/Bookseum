@@ -1,35 +1,164 @@
 /* ===== custom properties ===== */
+
 :root {
-  /* colour palette and spacing variables */
+  
+  /* colour palette */
+  --color-bg: #f5f0e8;
+  --color-text: #2c2c2c;
+  --color-white: #ffffff;
+  --color-muted: #7a7a7a;
+  --color-border: #ddd5c2;
+  --color-error: #c0392b;
+
+  /* fonts */
+  --font-display: 'Georgia', serif;
+  --font-body: 'Segoe UI', Arial, sans-serif;
+
+  /* spacing */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.6rem;
+
+  /* border radius */
+  --radius-sm: 6px;
+
+  /* transition */
+  --transition: 0.2s ease;
 }
+
 
 /* ===== reset ===== */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+
 /* ===== header ===== */
 
-/* ===== nav — use Flexbox here ===== */
+header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-/* ===== login page ===== */
+
+/* ===== nav — Flexbox ===== */
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.nav__links a {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.nav__links a:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-accent);
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+#nav-user {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+#logout-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+#logout-btn:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
 
 /* ===== main ===== */
 
-/* ===== form ===== */
+main {
+  flex: 1;
+}
 
-/* ===== results grid — use CSS Grid here ===== */
-
-/* ===== card ===== */
-
-/* ===== saved grid — use CSS Grid here ===== */
-
-/* ===== loading & error states ===== */
 
 /* ===== footer ===== */
 
-/* ===== responsive ===== */
-@media (max-width: 600px) {
-  /* mobile */
-}
-
-@media (min-width: 1024px) {
-  /* desktop */
+footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: 0.85rem;
+  color: var(--color-muted);
 }
