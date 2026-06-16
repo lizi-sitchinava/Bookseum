@@ -267,6 +267,8 @@ footer {
   border-color: var(--color-accent);
 }
 
+
+/* ===== Era filters - select ===== */
 #era-filter {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1.5px solid var(--color-border);
@@ -296,6 +298,128 @@ footer {
 }
 
 #search-form button[type="submit"]:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+
+
+
+
+/* ===== login page ===== */
+
+.login-section {
+  max-width: 520px;
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-md);
+}
+
+.login-section h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: var(--spacing-xs);
+}
+
+.login-section > p {
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+
+/* ===== login form — Flexbox ===== */
+
+#login-form {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+#login-form label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+#name-input,
+#email-input,
+#era-input,
+#bio-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition);
+}
+
+#name-input::placeholder,
+#email-input::placeholder,
+#era-input::placeholder,
+#bio-input::placeholder {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+#name-input:focus,
+#email-input:focus,
+#era-input:focus,
+#bio-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+#bio-input {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.form__checkbox input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--color-accent);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.form__checkbox label {
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+#login-error {
+  color: var(--color-error);
+  font-size: 0.88rem;
+}
+
+#login-form button[type="submit"] {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+#login-form button[type="submit"]:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
 }
