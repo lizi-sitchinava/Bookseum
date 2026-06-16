@@ -56,10 +56,11 @@
           type="text"
           id="search-input"
           name="query"
-          placeholder="search any word... (e.g. love, anger, sun)"
+          placeholder="search any word... (e.g. love, ocean, blue)"
           minlength="2"
         />
 
+        <!------- era lifters ------->
         <select id="era-filter" name="era">
           <option value="">All Eras</option>
           <option value="ancient">Ancient</option>
@@ -68,11 +69,31 @@
           <option value="modern">Modern</option>
         </select>
 
+
         <button type="submit">Search</button>
       </form>
     </section>
 
+
+
+    <!------- loading and error ------->
+    <p id="loading-msg" hidden>Loading the mood...</p>
+
+    <p id="error-msg" hidden></p>
+
+
+    <!------- art results in grid ------>
+    <section class="results-section" >
+      <div id="results-grid"></div>
+    </section>
+
   </main>
+
+
+  <!--------- footer ---------->
+  <footer>
+    <p>Moodseum by Lizi Sitchinava © 2026</p>
+  </footer>
 
 </body>
 </html>
