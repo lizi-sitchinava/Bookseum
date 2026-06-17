@@ -1,11 +1,7 @@
 const BASE_URL = 'https://openlibrary.org';
 
-export async function fetchBooks(query, sort = '') {
-  let url = `${BASE_URL}/search.json?q=${encodeURIComponent(query)}&fields=key,title,author_name,first_publish_year,number_of_pages_median,cover_i,subject&limit=20`;
-
-  if (sort) {
-    url += `&sort=${sort}`;
-  }
+export async function fetchBooks(query, sort = '', offset = 0) {
+  let url = `${BASE_URL}/search.json?q=${encodeURIComponent(query)}&fields=key,title,author_name,first_publish_year,number_of_pages_median,cover_i,subject&limit=20&offset=${offset}`;
 
   const response = await fetch(url);
   if (!response.ok) throw new Error('Failed to fetch books');
