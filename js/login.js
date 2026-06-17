@@ -69,14 +69,27 @@ if (isLoggedIn) {
   document.getElementById('terms-wrapper').style.display = 'none';
 
 
-  
+
   // make logo a link when logged in
-  const logo = document.querySelector('.nav__logo');
-  const logoLink = document.createElement('a');
-  logoLink.href = 'index.html';
-  logoLink.className = 'nav__logo';
-  logoLink.textContent = logo.textContent;
-  logo.replaceWith(logoLink);
+    const logo = document.querySelector('.nav__logo');
+    const logoLink = document.createElement('a');
+    logoLink.href = 'index.html';
+    logoLink.className = 'nav__logo';
+    logoLink.textContent = logo.textContent;
+    logo.replaceWith(logoLink);
+
+    // mobile logout button
+    const mobileLogout = document.getElementById('mobile-logout-btn');
+    if (mobileLogout) {
+      mobileLogout.hidden = false;
+      mobileLogout.addEventListener('click', () => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('email');
+        localStorage.removeItem('favoriteGenre');
+        localStorage.removeItem('bio');
+        window.location.href = 'login.html';
+      });
+    }
 }
 
 

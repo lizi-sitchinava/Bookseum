@@ -728,9 +728,39 @@ footer {
 }
 
 
+/* ===== mobile logout ===== */
+
+.mobile-logout {
+  display: none;
+  width: 100%;
+  background-color: transparent;
+  border: 1.5px solid var(--color-royal-light);
+  color: var(--color-royal);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  margin-top: var(--spacing-sm);
+}
+
+.mobile-logout:hover {
+  background-color: var(--color-royal);
+  color: var(--color-white);
+}
+
+
+
+
+
 /* ===== responsive ===== */
 
 @media (max-width: 600px) {
+
+  .nav__actions {
+    display: none;
+  }
+  
   nav {
     height: auto;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -793,6 +823,11 @@ footer {
 
   .shelf-tabs {
     flex-wrap: wrap;
+  }
+
+
+  .mobile-logout {
+    display: block;
   }
 }
 
