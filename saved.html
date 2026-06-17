@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Moodseum — My Board</title>
+  <title>Bookseum — My Bookseum</title>
 
   <link rel="stylesheet" href="css/style.css">
   <script type="module" defer src="js/saved.js"></script>
@@ -18,10 +18,10 @@
   <!------------- header --------------->
   <header>
     <nav>
-      <span class="nav__logo">Moodseum</span>
+      <span class="nav__logo">Bookseum</span>
       <div class="nav__links">
-        <a href="index.html">Gallery</a>
-        <a href="saved.html">My Board</a>
+        <a href="index.html">Discover</a>
+        <a href="saved.html">My Bookseum</a>
         <a href="login.html">Profile</a>
       </div>
       <div class="nav__actions">
@@ -35,14 +35,23 @@
   <!------------ main ------------>
   <main>
 
-    <!------- saved artworks ------->
+    <!------- saved books ------->
     <section class="saved-section">
-      <h1>My Mood Museum</h1>
-      <p>Your personally saved artworks, all in one place.</p>
+      <h1>My Bookseum</h1>
+      <p>Your personal reading list, all in one place.</p>
 
+
+
+      <!------- tabs ------->
+      <div class="shelf-tabs">
+        <button class="shelf-tab active" data-tab="all">All</button>
+        <button class="shelf-tab" data-tab="unread">Unread</button>
+        <button class="shelf-tab" data-tab="read">Read</button>
+      </div>
+
+      
       <!-- if empty + link to the main page-->
-      <p id="saved-empty" hidden>No saved artworks yet — <a href="index.html">go explore!</a></p>
-
+      <p id="saved-empty" hidden>Nothing here yet — <a href="index.html">go discover!</a></p>
 
       <div id="saved-grid"></div>
     </section>
@@ -52,7 +61,7 @@
 
   <!--------- footer ---------->
   <footer>
-    <p>Moodseum by Lizi Sitchinava © 2026</p>
+    <p>Bookseum by Lizi Sitchinava © 2026</p>
   </footer>
 
 </body>

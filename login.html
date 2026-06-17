@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Moodseum — Profile</title>
+  <title>Bookseum — Profile</title>
 
   <link rel="stylesheet" href="css/style.css">
   <script type="module" defer src="js/login.js"></script>
@@ -18,11 +18,15 @@
   <!------------- header --------------->
   <header>
     <nav>
-      <span class="nav__logo">Moodseum</span>
+      <span class="nav__logo">Bookseum</span>
       <div class="nav__links">
-        <a href="index.html">Gallery</a>
-        <a href="saved.html">My Board</a>
+        <a href="index.html">Discover</a>
+        <a href="saved.html">My Bookseum</a>
         <a href="login.html">Profile</a>
+      </div>
+      <div class="nav__actions">
+        <span id="nav-user"></span>
+        <button id="logout-btn" type="button">Logout</button>
       </div>
     </nav>
   </header>
@@ -31,14 +35,28 @@
   <!------------ main ------------>
   <main>
 
-    <!------- profile form ------->
+    <!------- profile info ------>
+    <section class="profile-info" id="profile-info" hidden>
+      <div class="profile-info__card">
+        <h2 id="profile-name"></h2>
+        <p id="profile-email"></p>
+        <p id="profile-genre"></p>
+        <p id="profile-bio"></p>
+      </div>
+    </section>
+
+
+
+    <!----- profile form ------->
     <section class="login-section">
-      <h1>Set up your Moodseum profile</h1>
-      <p>Tell us a little about yourself to get started.</p>
+      <h1 id="form-title">Set up your Bookseum profile</h1>
+      <p id="form-subtitle">Tell us a little about yourself to get started.</p>
 
       <form id="login-form">
 
-        <!------- name ------->
+
+
+        <!------- name ------>
         <label for="name-input">Your Name</label>
         <input
           id="name-input"
@@ -49,10 +67,10 @@
           autocomplete="name"
           placeholder="e.g. Galadriel"
         />
-        
 
 
-        <!------- email ------->
+
+        <!------ email ------->
         <label for="email-input">Your Email</label>
         <input
           id="email-input"
@@ -63,19 +81,21 @@
           placeholder="e.g. galadriel@gmail.com"
         />
 
-        <!------- favorite era ------->
-        <label for="era-input">Favorite Art Era</label>
+
+
+        <!----- favorite genre ------->
+        <label for="era-input">Favorite Genre</label>
         <select id="era-input" name="era">
           <option value="">No Preference</option>
-          <option value="ancient">Ancient</option>
-          <option value="medieval">Medieval</option>
-          <option value="renaissance">Renaissance</option>
-          <option value="modern">Modern</option>
+          <option value="romance">Romance</option>
+          <option value="fantasy">Fantasy</option>
+          <option value="adventure">Adventure</option>
+          <option value="detective">Detective</option>
         </select>
 
 
 
-        <!------- bio ------->
+        <!------- bio------>
         <label for="bio-input">About You</label>
         <textarea
           id="bio-input"
@@ -85,31 +105,31 @@
         ></textarea>
 
 
-        <!------- terms checkbox ------->
-        <div class="form__checkbox">
+
+
+        <!------- terms checkbox------>
+        <div class="form__checkbox" id="terms-wrapper">
           <input
             id="terms-input"
             type="checkbox"
             name="terms"
-            required
           />
-          <label for="terms-input">I agree that Moodseum may store my preferences to personalise my experience.</label>
-
+          <label for="terms-input">I agree that Bookseum may store my preferences to personalise my experience.</label>
         </div>
 
-
         <p id="login-error" hidden></p>
+        <p id="login-success" hidden>Profile updated successfully!</p>
 
-        <button type="submit">Start exploring →</button>
+        <button type="submit" id="form-btn">Start reading →</button>
       </form>
     </section>
 
   </main>
 
 
-  <!--------- footer ---------->
+  <!-------- footer ------->
   <footer>
-    <p>Moodseum by Lizi Sitchinava © 2026</p>
+    <p>Bookseum by Lizi Sitchinava © 2026</p>
   </footer>
 
 </body>

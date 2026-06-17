@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Moodseum</title>
+  <title>Bookseum</title>
 
   <link rel="stylesheet" href="css/style.css">
   <script type="module" defer src="js/main.js"></script>
@@ -18,10 +18,10 @@
   <!------------- header --------------->
   <header>
     <nav>
-      <span class="nav__logo">Moodseum</span>
+      <span class="nav__logo">Bookseum</span>
       <div class="nav__links">
-        <a href="index.html">Gallery</a>
-        <a href="saved.html">My Board</a>
+        <a href="index.html">Discover</a>
+        <a href="saved.html">My Bookseum</a>
         <a href="login.html">Profile</a>
       </div>
       <div class="nav__actions">
@@ -37,14 +37,14 @@
 
     <!------- hero ------->
     <section class="hero-section">
-      <h1>Your emotions, illustrated!</h1>
-      <p>Pick a vibe, explore real museum art, and build your personal mood board.</p>
+      <h1>Find your next great read.</h1>
+      <p>Pick a genre, explore thousands of real books, and build your personal reading list.</p>
 
       <div class="mood-buttons">
-        <button class="mood-btn" data-mood="sunshine flowers joy">😊 Happy</button>
-        <button class="mood-btn" data-mood="rain solitude grey">😔 Melancholic</button>
-        <button class="mood-btn" data-mood="shadow night dark">😮 Mysterious</button>
-        <button class="mood-btn" data-mood="fire movement bold">⚡ Energetic</button>
+        <button class="mood-btn" data-mood="romance">💕 Romance</button>
+        <button class="mood-btn" data-mood="fantasy">🧙 Fantasy</button>
+        <button class="mood-btn" data-mood="adventure">⚔️ Adventure</button>
+        <button class="mood-btn" data-mood="detective">🔍 Detective</button>
       </div>
     </section>
 
@@ -56,34 +56,31 @@
           type="text"
           id="search-input"
           name="query"
-          placeholder="search any word... (e.g. love, ocean, blue)"
+          placeholder="search any book, author or keyword..."
           minlength="2"
         />
 
-        <!------- era lifters ------->
-        <select id="era-filter" name="era">
-          <option value="">All Eras</option>
-          <option value="ancient">Ancient</option>
-          <option value="medieval">Medieval</option>
-          <option value="renaissance">Renaissance</option>
-          <option value="modern">Modern</option>
+        <!------- sort filter ------->
+        <select id="lang-filter" name="sort">
+          <option value="">Most Relevant</option>
+          <option value="new">Newest First</option>
+          <option value="old">Oldest First</option>
+          <option value="rating">Most Popular</option>
         </select>
-
 
         <button type="submit">Search</button>
       </form>
     </section>
 
 
-
     <!------- loading and error ------->
-    <p id="loading-msg" hidden>Loading the mood...</p>
+    <p id="loading-msg" hidden>📚 Finding your books...</p>
 
     <p id="error-msg" hidden></p>
 
 
-    <!------- art results in grid ------>
-    <section class="results-section" >
+    <!------- book results in grid ------>
+    <section class="results-section">
       <div id="results-grid"></div>
     </section>
 
@@ -92,7 +89,7 @@
 
   <!--------- footer ---------->
   <footer>
-    <p>Moodseum by Lizi Sitchinava © 2026</p>
+    <p>Bookseum by Lizi Sitchinava © 2026</p>
   </footer>
 
 </body>
