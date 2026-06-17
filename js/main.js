@@ -144,7 +144,8 @@ function renderResults(books, append = false) {
   if (!append) grid.innerHTML = '';
 
   if (books.length === 0 && !append) {
-    showError('No books found — try a different search!');
+    const query = document.getElementById('search-input').value.trim();
+    showError(`No books found for "${query}" — check your spelling or try a different keyword!`);
     showMoreBtn.hidden = true;
     return;
   }
@@ -169,7 +170,7 @@ async function search(query, sort = '', offset = 0) {
   currentOffset = offset;
 
   try {
-    let books = await fetchBooks(query, '', offset);
+    let books = await fetchBooks(query, sort, offset);
 
     // sort on our side so no books get dropped
     if (sort === 'new') {
@@ -196,10 +197,15 @@ const moodMessages = {
   detective: 'On the case! 🔍',
 };
 
+
 document.querySelectorAll('.mood-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
+    // put genre in search input and auto search
+    document.getElementById('search-input').value = btn.dataset.mood;
+
     const sort = document.getElementById('lang-filter').value;
     search(btn.dataset.mood, sort, 0);
 
@@ -209,7 +215,6 @@ document.querySelectorAll('.mood-btn').forEach(btn => {
     msgEl.hidden = false;
   });
 });
-
 
 
 
