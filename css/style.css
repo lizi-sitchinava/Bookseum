@@ -11,6 +11,7 @@
   --color-muted: #7a7a7a;
   --color-border: #ddd5c2;
   --color-error: #c0392b;
+  --color-success: #27ae60;
 
   /* fonts */
   --font-display: 'Georgia', serif;
@@ -25,6 +26,7 @@
 
   /* border radius */
   --radius-sm: 6px;
+  --radius-md: 12px;
   --radius-lg: 20px;
 
   /* shadows */
@@ -33,6 +35,9 @@
   /* transition */
   --transition: 0.2s ease;
 }
+
+
+
 
 /* ===== reset ===== */
 
@@ -86,8 +91,8 @@ header {
 }
 
 
-/* ===== nav — Flexbox ===== */
 
+/* ===== nav — Flexbox ===== */
 nav {
   max-width: 1200px;
   margin: 0 auto;
@@ -159,20 +164,6 @@ main {
 }
 
 
-/* ===== footer ===== */
-
-footer {
-  background-color: var(--color-white);
-  border-top: 1px solid var(--color-border);
-  text-align: center;
-  padding: var(--spacing-md);
-  font-size: 0.85rem;
-  color: var(--color-muted);
-}
-
-
-
-
 /* ===== hero section ===== */
 
 .hero-section {
@@ -197,7 +188,7 @@ footer {
 }
 
 
-/* ===== mood buttons — Flexbox ===== */
+/* ===== genre buttons — Flexbox ===== */
 
 .mood-buttons {
   display: flex;
@@ -229,9 +220,6 @@ footer {
   background-color: var(--color-accent);
   color: var(--color-white);
 }
-
-
-
 
 
 /* ===== search section — Flexbox ===== */
@@ -268,8 +256,9 @@ footer {
 }
 
 
-/* ===== Era filters - select ===== */
-#era-filter {
+/* ===== sort filter — select ===== */
+
+#lang-filter {
   padding: var(--spacing-sm) var(--spacing-md);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -281,7 +270,7 @@ footer {
   transition: border-color var(--transition);
 }
 
-#era-filter:focus {
+#lang-filter:focus {
   outline: none;
   border-color: var(--color-accent);
 }
@@ -307,6 +296,7 @@ footer {
 
 
 /* ===== login page ===== */
+
 
 .login-section {
   max-width: 520px;
@@ -362,7 +352,6 @@ footer {
 
 #name-input::placeholder,
 #email-input::placeholder,
-#era-input::placeholder,
 #bio-input::placeholder {
   font-style: italic;
   color: var(--color-muted);
@@ -408,6 +397,11 @@ footer {
   font-size: 0.88rem;
 }
 
+#login-success {
+  color: var(--color-success);
+  font-size: 0.88rem;
+}
+
 #login-form button[type="submit"] {
   background-color: var(--color-accent);
   color: var(--color-white);
@@ -422,4 +416,133 @@ footer {
 #login-form button[type="submit"]:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
+}
+
+
+/* ===== profile info card — Flexbox ===== */
+
+.profile-info {
+  max-width: 520px;
+  margin: var(--spacing-xl) auto var(--spacing-md);
+  padding: 0 var(--spacing-md);
+}
+
+.profile-info__card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.profile-info__card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.profile-info__card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+
+
+/* ===== loading & error states ===== */
+
+#loading-msg {
+  text-align: center;
+  color: var(--color-muted);
+  font-style: italic;
+  padding: var(--spacing-lg);
+}
+
+#error-msg {
+  text-align: center;
+  color: var(--color-error);
+  padding: var(--spacing-md);
+  font-weight: 600;
+}
+
+
+
+
+/* ===== saved section ===== */
+
+.saved-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+}
+
+.saved-section h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: var(--spacing-xs);
+}
+
+.saved-section > p {
+  color: var(--color-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+
+/* ===== shelf tabs — Flexbox ===== */
+
+.shelf-tabs {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.shelf-tab {
+  background: none;
+  border: 2px solid var(--color-border);
+  color: var(--color-muted);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.shelf-tab:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.shelf-tab.active {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+
+/* ===== empty state ===== */
+
+#saved-empty {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+#saved-empty a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+
+/* ===== footer ===== */
+
+footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: 0.85rem;
+  color: var(--color-muted);
 }
